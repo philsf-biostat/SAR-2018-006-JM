@@ -50,20 +50,20 @@ sar[, .(Shapiro.pv = shapiro.test(log10(Quantity))$p.value, Significant = shapir
 
 ## homogeneity of variances
 # Bartlett
-with(cax, bartlett.test(log10(Quantity), Sample))
-with(rub, bartlett.test(log10(Quantity), Sample))
-with(sar, bartlett.test(log10(Quantity), Sample))
-
-# Fligner
-with(sar, fligner.test(Quantity, Sample))
-with(rub, fligner.test(Quantity, Sample))
-with(cax, fligner.test(Quantity, Sample))
+with(cax, bartlett.test(log10(Quantity) ~ Sample))
+with(rub, bartlett.test(log10(Quantity) ~ Sample))
+with(sar, bartlett.test(log10(Quantity) ~ Sample))
 
 # Levene
 library(car)
-with(cax, leveneTest(log10(Quantity), Sample))
-with(rub, leveneTest(log10(Quantity), Sample))
-with(sar, leveneTest(log10(Quantity), Sample))
+with(cax, leveneTest(log10(Quantity) ~ Sample))
+with(rub, leveneTest(log10(Quantity) ~ Sample))
+with(sar, leveneTest(log10(Quantity) ~ Sample))
+
+# Fligner
+with(sar, fligner.test(Quantity ~ Sample))
+with(rub, fligner.test(Quantity ~ Sample))
+with(cax, fligner.test(Quantity ~ Sample))
 
 library(psych)
 with(cax, describeBy(log10(Quantity), Sample))
