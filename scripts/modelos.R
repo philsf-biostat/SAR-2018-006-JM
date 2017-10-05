@@ -12,3 +12,7 @@ anova.cax <- aov(data = cax, log10(Quantity) ~ Sample)
 anova.rub <- aov(data = rub, log10(Quantity) ~ Sample)
 anova.sar <- aov(data = sar, log10(Quantity) ~ Sample) # violação de normalidade
 kw.sar <- kruskal.test(data = sar, Quantity ~ factor(Sample))
+
+# lme(log10(Quantity) ~ Sample, data = cax, random = ~1 | Sample)
+# lme(log10(Quantity) ~ Sample, data = rub, random = ~1 | Sample)
+# lme(log10(Quantity) ~ Sample, data = sar, random = ~1 | Sample)
