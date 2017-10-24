@@ -70,6 +70,7 @@ with(cax, describeBy(log10(Quantity), Sample))
 with(rub, describeBy(log10(Quantity), Sample))
 with(sar, describeBy(log10(Quantity), Sample))
 
+library(tableone)
 cax.tab <- CreateTableOne(data = transform(cax, Quantity = log10(Quantity)), vars = c("Quantity"), strata = "Sample")
 rub.tab <- CreateTableOne(data = transform(rub, Quantity = log10(Quantity)), vars = c("Quantity"), strata = "Sample")
 sar.tab <- CreateTableOne(data = transform(sar, Quantity = log10(Quantity)), vars = c("Quantity"), strata = "Sample")
