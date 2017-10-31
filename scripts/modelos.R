@@ -12,3 +12,8 @@ anova.cax <- aov(data = cax, log10(Quantity) ~ Sample)
 anova.rub <- aov(data = rub, log10(Quantity) ~ Sample)
 anova.sar <- aov(data = sar, log10(Quantity) ~ Sample) # violação de normalidade
 kw.sar <- kruskal.test(data = sar, Quantity ~ factor(Sample))
+
+# Residuals
+resid.cax.p <- format.pval(shapiro.test(resid(modelo.cax))$p.value, digits = 2, eps = .001)
+resid.rub.p <- format.pval(shapiro.test(resid(modelo.rub))$p.value, digits = 2, eps = .001)
+resid.sar.p <- format.pval(shapiro.test(resid(modelo.sar))$p.value, digits = 2, eps = .001)
