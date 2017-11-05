@@ -36,15 +36,18 @@ library(ggplot2)
 # ggplot(cax, aes(Sample, Quantity)) +
   # scale_y_log10() +
 ggplot(cax, aes(Sample, log10(Quantity))) +
-  geom_point(alpha = .4)
+  geom_point(alpha = .4) +
+  ggtitle("Mumps")
 # ggplot(rub, aes(Sample, Quantity)) +
   # scale_y_log10() +
 ggplot(rub, aes(Sample, log10(Quantity))) +
-  geom_point(alpha = .4)
+  geom_point(alpha = .4) +
+  ggtitle("Rubella")
 # ggplot(sar, aes(Sample, Quantity)) +
   # scale_y_log10() +
 ggplot(sar, aes(Sample, log10(Quantity))) +
-  geom_point(alpha = .4)
+  geom_point(alpha = .4) +
+  ggtitle("Measles")
 
 ## Normality
 cax[, .(Shapiro.pv = shapiro.test(log10(Quantity))$p.value, Significant = shapiro.test(log10(Quantity))$p.value < .05), by = Sample]
