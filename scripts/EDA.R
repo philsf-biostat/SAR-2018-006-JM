@@ -34,7 +34,13 @@ dev.off()
 
 library(ggplot2)
 ggplot(cax, aes(Sample, Quantity)) +
-  # scale_y_log10() +
+  scale_y_log10() +
+  geom_point(alpha = .4)
+ggplot(rub, aes(Sample, Quantity)) +
+  scale_y_log10() +
+  geom_point(alpha = .4)
+ggplot(sar, aes(Sample, Quantity)) +
+  scale_y_log10() +
   geom_point(alpha = .4)
 
 ## Normality
@@ -42,11 +48,29 @@ cax[, .(Shapiro.pv = shapiro.test(log10(Quantity))$p.value, Significant = shapir
 rub[, .(Shapiro.pv = shapiro.test(log10(Quantity))$p.value, Significant = shapiro.test(log10(Quantity))$p.value < .05), by = Sample]
 sar[, .(Shapiro.pv = shapiro.test(log10(Quantity))$p.value, Significant = shapiro.test(log10(Quantity))$p.value < .05), by = Sample]
 
+## homogeneity of variances
+# Bartlett
+with(cax, bartlett.test(log10(Quantity) ~ Sample))
+with(rub, bartlett.test(log10(Quantity) ~ Sample))
+with(sar, bartlett.test(log10(Quantity) ~ Sample))
+
+# Levene
+library(car)
+with(cax, leveneTest(log10(Quantity) ~ Sample))
+with(rub, leveneTest(log10(Quantity) ~ Sample))
+with(sar, leveneTest(log10(Quantity) ~ Sample))
+
+# Fligner
+with(sar, fligner.test(Quantity ~ Sample))
+with(rub, fligner.test(Quantity ~ Sample))
+with(cax, fligner.test(Quantity ~ Sample))
+
 library(psych)
 with(cax, describeBy(log10(Quantity), Sample))
 with(rub, describeBy(log10(Quantity), Sample))
 with(sar, describeBy(log10(Quantity), Sample))
 
+library(tableone)
 cax.tab <- CreateTableOne(data = transform(cax, Quantity = log10(Quantity)), vars = c("Quantity"), strata = "Sample")
 rub.tab <- CreateTableOne(data = transform(rub, Quantity = log10(Quantity)), vars = c("Quantity"), strata = "Sample")
 sar.tab <- CreateTableOne(data = transform(sar, Quantity = log10(Quantity)), vars = c("Quantity"), strata = "Sample")
