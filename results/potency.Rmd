@@ -3,10 +3,15 @@ title: "Analysis of vaccine potency"
 output: html_notebook
 ---
 
-```{r echo=FALSE}
-source("scripts/modelos.R")
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = "..")
 library(pander)
 library(philsfmisc)
+```
+
+
+```{r, echo=FALSE}
+source("scripts/modelos.R")
 ```
 
 ## Mumps
