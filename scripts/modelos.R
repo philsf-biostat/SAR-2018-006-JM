@@ -17,3 +17,8 @@ kw.sar <- kruskal.test(data = sar, Quantity ~ factor(Sample))
 resid.cax.p <- format.pval(shapiro.test(resid(modelo.cax))$p.value, digits = 2, eps = .001)
 resid.rub.p <- format.pval(shapiro.test(resid(modelo.rub))$p.value, digits = 2, eps = .001)
 resid.sar.p <- format.pval(shapiro.test(resid(modelo.sar))$p.value, digits = 2, eps = .001)
+
+# modelos mistos (failed attempt)
+# lme(log10(Quantity) ~ Sample, data = cax, random = ~1 | Sample)
+# lme(log10(Quantity) ~ Sample, data = rub, random = ~1 | Sample)
+# lme(log10(Quantity) ~ Sample, data = sar, random = ~1 | Sample)
