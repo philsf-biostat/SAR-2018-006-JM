@@ -16,7 +16,7 @@ library(philsfmisc)
 ```
 
 
-```{r, echo=FALSE}
+```{r scripts, echo=FALSE}
 source("scripts/modelos.R")
 ```
 
@@ -28,8 +28,8 @@ source("scripts/modelos.R")
 
 The linear regression model fit for mumps data indicates that
 
-```{r echo=FALSE}
-pander(modelo.cax, digits = c(2,1),
+```{r mumps-model, echo=FALSE}
+pander(modelo.cax,
        caption = "Model for mumps")
 ```
 
@@ -39,7 +39,7 @@ Residuals appear to be normally distributed (Shapiro-Wilk test, p = `r resid.cax
 
 The linear regression model fit for rubella data indicates that
 
-```{r echo=FALSE}
+```{r rub-model, echo=FALSE}
 pander(modelo.rub,
        caption = "Model for rubella")
 ```
@@ -50,7 +50,7 @@ Residuals appear to be normally distributed (Shapiro-Wilk test, p = `r resid.rub
 
 The linear regression model fit for measles data indicates that
 
-```{r echo=FALSE}
+```{r measles-model, echo=FALSE}
 pander(modelo.sar,
        caption = "Model for Measles")
 ```
