@@ -33,14 +33,17 @@ with(sar, by(log10(Quantity), Sample, function(x) {qqnorm(x, main = "SAR"); qqli
 dev.off()
 
 library(ggplot2)
-ggplot(cax, aes(Sample, Quantity)) +
-  scale_y_log10() +
+# ggplot(cax, aes(Sample, Quantity)) +
+  # scale_y_log10() +
+ggplot(cax, aes(Sample, log10(Quantity))) +
   geom_point(alpha = .4)
-ggplot(rub, aes(Sample, Quantity)) +
-  scale_y_log10() +
+# ggplot(rub, aes(Sample, Quantity)) +
+  # scale_y_log10() +
+ggplot(rub, aes(Sample, log10(Quantity))) +
   geom_point(alpha = .4)
-ggplot(sar, aes(Sample, Quantity)) +
-  scale_y_log10() +
+# ggplot(sar, aes(Sample, Quantity)) +
+  # scale_y_log10() +
+ggplot(sar, aes(Sample, log10(Quantity))) +
   geom_point(alpha = .4)
 
 ## Normality
