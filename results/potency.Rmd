@@ -1,6 +1,12 @@
 ---
 title: "Analysis of vaccine potency"
-output: html_notebook
+output:
+  html_document:
+    number_sections: yes
+    toc: yes
+  html_notebook:
+    number_sections: yes
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -13,6 +19,10 @@ library(philsfmisc)
 ```{r, echo=FALSE}
 source("scripts/modelos.R")
 ```
+
+# Methods
+
+# Results
 
 ## Mumps
 
