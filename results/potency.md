@@ -1,25 +1,9 @@
----
-title: "Analysis of vaccine potency"
-output:
-  html_document:
-    keep_md: yes
-    number_sections: yes
-    toc: yes
-  html_notebook:
-    number_sections: yes
-    toc: yes
----
-
-```{r setup, include=FALSE}
-knitr::opts_knit$set(root.dir = "..")
-library(pander)
-library(philsfmisc)
-```
+# Analysis of vaccine potency
 
 
-```{r scripts, echo=FALSE}
-source("scripts/potency-anova.R")
-```
+
+
+
 
 # Methods
 
