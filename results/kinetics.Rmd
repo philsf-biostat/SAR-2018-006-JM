@@ -13,3 +13,5 @@ output:
 # Methods
 
 # Results
+
+![](../figures/kinetics.png)
