@@ -12,11 +12,11 @@ source("scripts/input.R")
 
 # UserFriendlyScience
 library(userfriendlyscience)
-with(cax, oneway(Quantity, Sample, levene = T, corrections = T, posthoc = "games-howell", etasq = F)
+with(cax, oneway(Quantity, Sample, levene = T, corrections = T, posthoc = "games-howell", etasq = F, digits = 4)
 )
-with(rub, oneway(Quantity, Sample, levene = T, corrections = T, posthoc = "games-howell", etasq = F)
+with(rub, oneway(Quantity, Sample, levene = T, corrections = T, posthoc = "games-howell", etasq = F, digits = 4)
 )
-with(sar, oneway(Quantity, Sample, levene = T, corrections = T, posthoc = "games-howell", etasq = F)
+with(sar, oneway(Quantity, Sample, levene = T, corrections = T, posthoc = "games-howell", etasq = F, digits = 4)
 )
 
 library(ggplot2)
