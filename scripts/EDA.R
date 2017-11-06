@@ -59,9 +59,9 @@ with(sar, bartlett.test(Quantity ~ Sample))
 
 # Levene
 library(car)
-with(cax, leveneTest(Quantity ~ Sample))
-with(rub, leveneTest(Quantity ~ Sample))
-with(sar, leveneTest(Quantity ~ Sample))
+with(cax, leveneTest(Quantity ~ Sample, center = mean))
+with(rub, leveneTest(Quantity ~ Sample, center = mean))
+with(sar, leveneTest(Quantity ~ Sample, center = mean))
 
 # Fligner
 with(sar, fligner.test(Quantity ~ Sample))
