@@ -2,6 +2,12 @@ source("scripts/input.R")
 library(MethComp)
 library(ggplot2)
 
+# R and R2 ----------------------------------------------------------------
+
+kinetics[Titulacao>0, .(R = cor(Titulacao, qPCR), R2=cor(Titulacao, qPCR)^2), by = .(MOI, Virus)]
+
+# data visualization ------------------------------------------------------
+
 mc.cax.01 <- with(kin.cax.01[Titulacao>0], Deming(Titulacao, qPCR))
 mc.cax.001 <- with(kin.cax.001[Titulacao>0], Deming(Titulacao, qPCR))
 mc.sar.01 <- with(kin.sar.01[Titulacao>0], Deming(Titulacao, qPCR))
