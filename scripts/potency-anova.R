@@ -1,6 +1,17 @@
 source("scripts/input.R")
 
+# analysis code -----------------------------------------------------------
 
+# Levene
+library(car)
+leveneTest(Quantity ~ Sample, center = mean, data = sar) # Measles
+leveneTest(Quantity ~ Sample, center = mean, data = cax) # Mumps
+leveneTest(Quantity ~ Sample, center = mean, data = rub) # Rubella
+
+# Welch ANOVA
+oneway.test(Quantity ~ Sample, var.equal = F, data = sar) # Measles
+oneway.test(Quantity ~ Sample, var.equal = F, data = cax) # Mumps
+oneway.test(Quantity ~ Sample, var.equal = F, data = rub) # Rubella
 
 # UserFriendlyScience
 library(userfriendlyscience)
