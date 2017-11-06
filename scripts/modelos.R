@@ -10,6 +10,17 @@ resid.cax.p <- format.pval(shapiro.test(resid(anova.cax))$p.value, digits = 2, e
 resid.rub.p <- format.pval(shapiro.test(resid(anova.rub))$p.value, digits = 2, eps = .001)
 resid.sar.p <- format.pval(shapiro.test(resid(anova.sar))$p.value, digits = 2, eps = .001)
 
+library(ggplot2)
+ggplot(virs, aes(Sample, Quantity)) +
+  # geom_boxplot() +
+  geom_point(alpha = .25) +
+  xlab("") + ylab("Copies/PCR (log10)") +
+  ylim(c(0,10)) +
+  # ggtitle("Potency") +
+  # theme(legend.position = "bottom", legend.title = element_blank()) +
+  facet_wrap(~ Virus)
+ggsave("figures/potency.png", width = 7, height = 7)
+
 # modelos mistos (failed attempt)
 # lme(Quantity ~ Sample, data = cax, random = ~1 | Sample)
 # lme(Quantity ~ Sample, data = rub, random = ~1 | Sample)
