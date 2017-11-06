@@ -24,6 +24,8 @@ source("scripts/modelos.R")
 
 # Results
 
+![Figure: Potency evaluation of the different vaccine preparations for all three viruses. ](../figures/potency.png)
+
 ## Mumps
 
 The linear regression model fit for mumps data indicates that
