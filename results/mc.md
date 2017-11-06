@@ -9,6 +9,10 @@
 
 # Methods
 
+Deming regression + Pearson r/R².
+
+Note: Null Titration values were excluded.
+
 # Results
 
 ![Figure xx: Methods comparison between Titration and qPCR. Lines represent the Deming regression line for each experiment.](../figures/mc.png)
