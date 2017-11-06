@@ -33,21 +33,18 @@ with(sar, by(Quantity, Sample, function(x) {qqnorm(x, main = "SAR"); qqline(x)})
 dev.off()
 
 library(ggplot2)
-# ggplot(cax, aes(Sample, Quantity)) +
-  # scale_y_log10() +
-ggplot(cax, aes(Sample, log10(Quantity))) +
-  geom_point(alpha = .4) +
-  ggtitle("Mumps")
-# ggplot(rub, aes(Sample, Quantity)) +
-  # scale_y_log10() +
-ggplot(rub, aes(Sample, log10(Quantity))) +
-  geom_point(alpha = .4) +
-  ggtitle("Rubella")
-# ggplot(sar, aes(Sample, Quantity)) +
-  # scale_y_log10() +
-ggplot(sar, aes(Sample, log10(Quantity))) +
-  geom_point(alpha = .4) +
-  ggtitle("Measles")
+ggplot(cax, aes(Sample, Quantity)) +
+  geom_point(alpha = .25) +
+  xlab("Mumps") + ylab("Copies/PCR (log10)") +
+  ggtitle("Potency")
+ggplot(rub, aes(Sample, Quantity)) +
+  geom_point(alpha = .25) +
+  xlab("Rubella") + ylab("Copies/PCR (log10)") +
+  ggtitle("Potency")
+ggplot(sar, aes(Sample, Quantity)) +
+  geom_point(alpha = .25) +
+  xlab("Measles") + ylab("Copies/PCR (log10)") +
+  ggtitle("Potency")
 
 ## Normality
 cax[, .(Shapiro.pv = shapiro.test(Quantity)$p.value, Significant = shapiro.test(Quantity)$p.value < .05), by = Sample]
