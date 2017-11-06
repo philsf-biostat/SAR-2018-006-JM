@@ -10,6 +10,15 @@ resid.cax.p <- format.pval(shapiro.test(resid(anova.cax))$p.value, digits = 2, e
 resid.rub.p <- format.pval(shapiro.test(resid(anova.rub))$p.value, digits = 2, eps = .001)
 resid.sar.p <- format.pval(shapiro.test(resid(anova.sar))$p.value, digits = 2, eps = .001)
 
+# UserFriendlyScience
+library(userfriendlyscience)
+with(cax, oneway(Quantity, Sample, levene = T, corrections = T, posthoc = "games-howell", etasq = F)
+)
+with(rub, oneway(Quantity, Sample, levene = T, corrections = T, posthoc = "games-howell", etasq = F)
+)
+with(sar, oneway(Quantity, Sample, levene = T, corrections = T, posthoc = "games-howell", etasq = F)
+)
+
 library(ggplot2)
 ggplot(virs, aes(Sample, Quantity)) +
   # geom_boxplot() +
@@ -20,6 +29,14 @@ ggplot(virs, aes(Sample, Quantity)) +
   # theme(legend.position = "bottom", legend.title = element_blank()) +
   facet_wrap(~ Virus)
 ggsave("figures/potency.png", width = 7, height = 7)
+
+# TukeyHSD(anova.cax)
+# TukeyHSD(anova.rub)
+# TukeyHSD(anova.sar)
+
+# with(cax, pairwise.t.test(Quantity, Sample, p.adjust.method = "bonf"))
+# with(rub, pairwise.t.test(Quantity, Sample, p.adjust.method = "bonf"))
+# with(sar, pairwise.wilcox.test(10^Quantity, Sample, p.adjust.method = "bonf"))
 
 # modelos mistos (failed attempt)
 # lme(Quantity ~ Sample, data = cax, random = ~1 | Sample)
