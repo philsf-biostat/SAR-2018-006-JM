@@ -21,8 +21,8 @@ CONFERIR!
 
 ## Mumps
 
-The Welch ANOVA indicates the difference between groups (p <0.00001), where there is a significant decrease in the log quantity (measured in copies/PCR) in both vaccine preparations considered (final vaccine bulk, and final vaccine batch), when compared to the bulk vaccine (in both cases, the Games-Howell test return p <0.00001).
-When comparing the two tested vaccine groups, there is also a significant difference (Games-Howell test, p = 0.02198), indicating a significant decrease of 0.19 Copies/PCR (in log10).
+The Welch ANOVA indicates the difference between groups (p < 0.00001), where there is a significant decrease in the log quantity (measured in copies/PCR) in both vaccine preparations considered (final vaccine bulk, and final vaccine batch), when compared to the bulk vaccine (in both cases, the Games-Howell test return p < 0.00001).
+When comparing the two tested vaccine groups, there is also a significant difference (Games-Howell test, p = 0.02198), indicating an average decrease of 0.19 Copies/PCR (in log10) in the final batch preparation compared to the final bulk preparation.
 
 ## Rubella
 
