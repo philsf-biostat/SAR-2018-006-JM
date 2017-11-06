@@ -29,8 +29,8 @@ source("scripts/modelos.R")
 The linear regression model fit for mumps data indicates that
 
 ```{r mumps-model, echo=FALSE}
-pander(modelo.cax,
-       caption = "Model for mumps")
+pander(anova.cax,
+       caption = "ANOVA table for mumps")
 ```
 
 Residuals appear to be normally distributed (Shapiro-Wilk test, p = `r resid.cax.p`).
@@ -40,8 +40,8 @@ Residuals appear to be normally distributed (Shapiro-Wilk test, p = `r resid.cax
 The linear regression model fit for rubella data indicates that
 
 ```{r rub-model, echo=FALSE}
-pander(modelo.rub,
-       caption = "Model for rubella")
+pander(anova.rub,
+       caption = "ANOVA table for rubella")
 ```
 
 Residuals appear to be normally distributed (Shapiro-Wilk test, p = `r resid.rub.p`).
@@ -51,8 +51,8 @@ Residuals appear to be normally distributed (Shapiro-Wilk test, p = `r resid.rub
 The linear regression model fit for measles data indicates that
 
 ```{r measles-model, echo=FALSE}
-pander(modelo.sar,
-       caption = "Model for Measles")
+pander(anova.sar,
+       caption = "ANOVA table for Measles")
 ```
 
 Residuals appear to be normally distributed (Shapiro-Wilk test, p = `r resid.sar.p`).
