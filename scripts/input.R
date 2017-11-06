@@ -9,3 +9,8 @@ rub <- process.data(rub)
 
 sar <- read_excel("dataset/FAST- teste bulk mono x for x liof SAR 19-12_data.xls", 3)
 sar <- process.data(sar)
+
+cax$Virus <- "Mumps"
+rub$Virus <- "Rubella"
+sar$Virus <- "Measles"
+virs <- rbind(cax, rub, sar)
