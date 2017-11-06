@@ -7,6 +7,11 @@
 
 # Methods
 
+In an initial exploratory analysis, the inspection of the residuals in a classical ANOVA showed the assumption of normality was not strongly violated (no significant values were obtained from the Shapiro-Wilk test, results not shown).
+The Levene test, however, indicated the assumption of homogeneity of variances was violated in most cases (p = 0.00002 for Measles, p = 0.25029 for Mumps and p = 0.00761 for Rubella).
+We therefore opted to use the same procedure of the Welch correction in all analyses performed.
+In the same manner, the Games-Howell post-hoc test was employed to correct for multiple comparisons in the presence of heteroskedasticity.
+
 # Results
 
 OBSERVAÇÃO: TRADUÇÕES UTILIZADAS
