@@ -12,12 +12,9 @@ source("scripts/input.R")
 
 # UserFriendlyScience
 library(userfriendlyscience)
-with(cax, oneway(Quantity, Sample, levene = T, corrections = T, posthoc = "games-howell", etasq = F, digits = 4)
-)
-with(rub, oneway(Quantity, Sample, levene = T, corrections = T, posthoc = "games-howell", etasq = F, digits = 4)
-)
-with(sar, oneway(Quantity, Sample, levene = T, corrections = T, posthoc = "games-howell", etasq = F, digits = 4)
-)
+with(sar, oneway(Quantity, Sample, levene = T, corrections = T, posthoc = "games-howell", etasq = F, digits = 4)) # Measles
+with(cax, oneway(Quantity, Sample, levene = T, corrections = T, posthoc = "games-howell", etasq = F, digits = 4)) # Mumps
+with(rub, oneway(Quantity, Sample, levene = T, corrections = T, posthoc = "games-howell", etasq = F, digits = 4)) # Rubella
 
 library(ggplot2)
 ggplot(virs, aes(Sample, Quantity)) +
