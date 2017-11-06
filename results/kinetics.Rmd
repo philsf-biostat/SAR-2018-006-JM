@@ -1,5 +1,5 @@
 ---
-title: "Analysis of vaccine potency"
+title: "Analysis of virus kinetics"
 output:
   html_document:
     keep_md: yes

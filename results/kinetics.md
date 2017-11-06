@@ -1,4 +1,4 @@
-# Analysis of vaccine potency
+# Analysis of virus kinetics
 
 # Methods
 
