@@ -1,14 +1,14 @@
 source("scripts/input.R")
 
-anova.cax <- aov(data = cax, Quantity ~ Sample)
-anova.rub <- aov(data = rub, Quantity ~ Sample)
-anova.sar <- aov(data = sar, Quantity ~ Sample) # violação de normalidade
-kw.sar <- kruskal.test(data = sar, 10^Quantity ~ factor(Sample))
+# anova.cax <- aov(data = cax, Quantity ~ Sample)
+# anova.rub <- aov(data = rub, Quantity ~ Sample)
+# anova.sar <- aov(data = sar, Quantity ~ Sample) # violação de normalidade
+# kw.sar <- kruskal.test(data = sar, 10^Quantity ~ factor(Sample))
 
 # Residuals
-resid.cax.p <- format.pval(shapiro.test(resid(anova.cax))$p.value, digits = 2, eps = .001)
-resid.rub.p <- format.pval(shapiro.test(resid(anova.rub))$p.value, digits = 2, eps = .001)
-resid.sar.p <- format.pval(shapiro.test(resid(anova.sar))$p.value, digits = 2, eps = .001)
+# resid.cax.p <- format.pval(shapiro.test(resid(anova.cax))$p.value, digits = 2, eps = .001)
+# resid.rub.p <- format.pval(shapiro.test(resid(anova.rub))$p.value, digits = 2, eps = .001)
+# resid.sar.p <- format.pval(shapiro.test(resid(anova.sar))$p.value, digits = 2, eps = .001)
 
 # UserFriendlyScience
 library(userfriendlyscience)
