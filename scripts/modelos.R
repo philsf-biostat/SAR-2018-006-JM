@@ -1,13 +1,5 @@
 source("scripts/input.R")
 
-modelo.cax <- lm(data = cax, Quantity ~ Sample)
-modelo.rub <- lm(data = rub, Quantity ~ Sample)
-modelo.sar <- lm(data = sar, Quantity ~ Sample)
-
-summary(modelo.cax)
-summary(modelo.rub)
-summary(modelo.sar)
-
 anova.cax <- aov(data = cax, Quantity ~ Sample)
 anova.rub <- aov(data = rub, Quantity ~ Sample)
 anova.sar <- aov(data = sar, Quantity ~ Sample) # violação de normalidade
