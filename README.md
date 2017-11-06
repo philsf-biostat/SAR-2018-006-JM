@@ -4,4 +4,4 @@ Raw results for each analysis:
 
 - [Potency](results/potency.md)
 - [Kinetics](results/kinetics.md)
-- Method comparison
+- [Method comparison](results/mc.md)
