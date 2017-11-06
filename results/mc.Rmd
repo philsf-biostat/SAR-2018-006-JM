@@ -1,0 +1,37 @@
+---
+title: "Analysis of methods comparison"
+output:
+  html_document:
+    keep_md: yes
+    number_sections: yes
+    toc: yes
+  html_notebook: 
+    number_sections: yes
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = "..")
+library(pander)
+panderOptions("table.style", "rmarkdown")
+```
+
+```{r analysis, echo=FALSE}
+source("scripts/mc.R")
+```
+
+# Methods
+
+Deming regression + Pearson r/R².
+
+Note: Null Titration values were excluded.
+
+# Results
+
+![Figure xx: Methods comparison between Titration and qPCR. Lines represent the Deming regression line for each experiment.](../figures/mc.png)
+
+```{r table, echo=FALSE}
+pander(mc.stats,
+       caption = "Table xx: R and R² statistics for Methods Comparison between Titration x qPCR")
+```
+
