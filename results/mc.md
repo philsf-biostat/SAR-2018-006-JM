@@ -11,7 +11,7 @@
 
 # Results
 
-![](../figures/mc.png)
+![Methods comparison between Titration and qPCR. Lines represent the Deming regression line for each experiment.](../figures/mc.png)
 
 
 |    MOI    |  Virus  |    R    |    R2    |
