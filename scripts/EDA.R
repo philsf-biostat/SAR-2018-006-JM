@@ -7,11 +7,11 @@ plot(modelo.sar)
 
 png("teste.png", 900,400)
 par(mfrow = c(1,3))
-with(cax, boxplot(log10(Quantity) ~ Sample))
+with(cax, boxplot(Quantity ~ Sample))
 title(sub = "CAX")
-with(rub, boxplot(log10(Quantity) ~ Sample))
+with(rub, boxplot(Quantity ~ Sample))
 title(sub = "RUB")
-with(sar, boxplot(log10(Quantity) ~ Sample))
+with(sar, boxplot(Quantity ~ Sample))
 title(sub = "SAR")
 dev.off()
 
@@ -27,9 +27,9 @@ dev.off()
 
 png("teste3.png", 900, 900)
 par(mfrow = c(3,3))
-with(cax, by(log10(Quantity), Sample, function(x) {qqnorm(x, main = "CAX"); qqline(x)}))
-with(rub, by(log10(Quantity), Sample, function(x) {qqnorm(x, main = "RUB"); qqline(x)}))
-with(sar, by(log10(Quantity), Sample, function(x) {qqnorm(x, main = "SAR"); qqline(x)}))
+with(cax, by(Quantity, Sample, function(x) {qqnorm(x, main = "CAX"); qqline(x)}))
+with(rub, by(Quantity, Sample, function(x) {qqnorm(x, main = "RUB"); qqline(x)}))
+with(sar, by(Quantity, Sample, function(x) {qqnorm(x, main = "SAR"); qqline(x)}))
 dev.off()
 
 library(ggplot2)
@@ -50,21 +50,21 @@ ggplot(sar, aes(Sample, log10(Quantity))) +
   ggtitle("Measles")
 
 ## Normality
-cax[, .(Shapiro.pv = shapiro.test(log10(Quantity))$p.value, Significant = shapiro.test(log10(Quantity))$p.value < .05), by = Sample]
-rub[, .(Shapiro.pv = shapiro.test(log10(Quantity))$p.value, Significant = shapiro.test(log10(Quantity))$p.value < .05), by = Sample]
-sar[, .(Shapiro.pv = shapiro.test(log10(Quantity))$p.value, Significant = shapiro.test(log10(Quantity))$p.value < .05), by = Sample]
+cax[, .(Shapiro.pv = shapiro.test(Quantity)$p.value, Significant = shapiro.test(Quantity)$p.value < .05), by = Sample]
+rub[, .(Shapiro.pv = shapiro.test(Quantity)$p.value, Significant = shapiro.test(Quantity)$p.value < .05), by = Sample]
+sar[, .(Shapiro.pv = shapiro.test(Quantity)$p.value, Significant = shapiro.test(Quantity)$p.value < .05), by = Sample]
 
 ## homogeneity of variances
 # Bartlett
-with(cax, bartlett.test(log10(Quantity) ~ Sample))
-with(rub, bartlett.test(log10(Quantity) ~ Sample))
-with(sar, bartlett.test(log10(Quantity) ~ Sample))
+with(cax, bartlett.test(Quantity ~ Sample))
+with(rub, bartlett.test(Quantity ~ Sample))
+with(sar, bartlett.test(Quantity ~ Sample))
 
 # Levene
 library(car)
-with(cax, leveneTest(log10(Quantity) ~ Sample))
-with(rub, leveneTest(log10(Quantity) ~ Sample))
-with(sar, leveneTest(log10(Quantity) ~ Sample))
+with(cax, leveneTest(Quantity ~ Sample))
+with(rub, leveneTest(Quantity ~ Sample))
+with(sar, leveneTest(Quantity ~ Sample))
 
 # Fligner
 with(sar, fligner.test(Quantity ~ Sample))
@@ -72,13 +72,13 @@ with(rub, fligner.test(Quantity ~ Sample))
 with(cax, fligner.test(Quantity ~ Sample))
 
 library(psych)
-with(cax, describeBy(log10(Quantity), Sample))
-with(rub, describeBy(log10(Quantity), Sample))
-with(sar, describeBy(log10(Quantity), Sample))
+with(cax, describeBy(Quantity, Sample))
+with(rub, describeBy(Quantity, Sample))
+with(sar, describeBy(Quantity, Sample))
 
 library(tableone)
-cax.tab <- CreateTableOne(data = transform(cax, Quantity = log10(Quantity)), vars = c("Quantity"), strata = "Sample")
-rub.tab <- CreateTableOne(data = transform(rub, Quantity = log10(Quantity)), vars = c("Quantity"), strata = "Sample")
-sar.tab <- CreateTableOne(data = transform(sar, Quantity = log10(Quantity)), vars = c("Quantity"), strata = "Sample")
+cax.tab <- CreateTableOne(data = transform(cax, Quantity = Quantity), vars = c("Quantity"), strata = "Sample")
+rub.tab <- CreateTableOne(data = transform(rub, Quantity = Quantity), vars = c("Quantity"), strata = "Sample")
+sar.tab <- CreateTableOne(data = transform(sar, Quantity = Quantity), vars = c("Quantity"), strata = "Sample")
 sar.tabnn <- CreateTableOne(data = sar, vars = c("Quantity"), strata = "Sample")
 
