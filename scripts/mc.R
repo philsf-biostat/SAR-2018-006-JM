@@ -4,7 +4,7 @@ library(ggplot2)
 
 # R and R2 ----------------------------------------------------------------
 
-kinetics[Titulacao>0, .(R = cor(Titulacao, qPCR), R2=cor(Titulacao, qPCR)^2), by = .(MOI, Virus)]
+mc.stats <- kinetics[Titulacao>0, .(R = cor(Titulacao, qPCR), R2=cor(Titulacao, qPCR)^2), by = .(MOI, Virus)]
 
 # data visualization ------------------------------------------------------
 
