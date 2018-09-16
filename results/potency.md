@@ -1,4 +1,14 @@
-# Analysis of vaccine potency
+---
+title: "Analysis of vaccine potency"
+output:
+  html_document:
+    keep_md: yes
+    number_sections: yes
+    toc: yes
+  html_notebook:
+    number_sections: yes
+    toc: yes
+---
 
 
 
