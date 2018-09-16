@@ -1,4 +1,5 @@
 source("scripts/input.R")
+library(ggplot2)
 
 # data viz ----------------------------------------------------------------
 

@@ -1,4 +1,14 @@
-# Analysis of methods comparison
+---
+title: "Analysis of methods comparison"
+output:
+  html_document:
+    keep_md: yes
+    number_sections: yes
+    toc: yes
+  html_notebook: 
+    number_sections: yes
+    toc: yes
+---
 
 
 
